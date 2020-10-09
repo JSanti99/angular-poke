@@ -1,29 +1,26 @@
 <nb-layout>
     <nb-layout-header fixed>
-        dqdq
+        <h2>Poke-API</h2>
     </nb-layout-header>
     <nb-layout-column> 
-        <div class="cards-pokemon" *ngIf="pokemons | async">
-            {{console.log(pokemons)}}
-            
-            <!-- <nb-card class="card-pokemon" accent="danger" *ngFor="let pokemon of pokemons | async">
-                <nb-card-header>
-                    {{pokemon.name}}
-                </nb-card-header>  
-                <nb-card-body>
-                    <img class="card-body-pokemon-img" [src]="getImage(i)" alt="">
-                </nb-card-body>
-                <nb-card-footer>
-                    
-                </nb-card-footer>
-            </nb-card> -->
-        </div>
-        
-
-        
+        <input type="text" #numPoke (keypress)="numberOnly($event)" (keyup)="changeNumber($event.target.value)" [value]="num" nbInput fullWidth >
+            <div class="cards-container" (ngModelChange)="num" >
+                <div class="cards-pokemon" *ngIf="pokemons$ | async as poke">
+                <nb-card class="card-pokemon" accent="danger" *ngFor="let pokemon of poke.results; index as i">
+                    <nb-card-header>
+                        {{pokemon.name}}
+                    </nb-card-header>  
+                    <nb-card-body>
+                        <img class="card-body-pokemon-img" [src]="getImages(i)" alt="">
+                    </nb-card-body>
+                    <nb-card-footer>
+                        {{i}}
+                    </nb-card-footer>
+                </nb-card> 
+            </div>
+            </div>
     </nb-layout-column>
     <nb-layout-footer>
-
-        qwdq
+        <p>Made with ❤</p>
     </nb-layout-footer>
 </nb-layout>

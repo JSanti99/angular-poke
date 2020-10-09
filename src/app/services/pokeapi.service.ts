@@ -22,8 +22,8 @@ export class PokeapiService {
 
   constructor(private http: HttpClient) {  }
 
-  getPokemons()  {
-    return this.http.get<IPokemon>('https://pokeapi.co/api/v2/pokemon').subscribe(res => res);
+  getPokemons(num: number)  {
+    return this.http.get<IPokemon>(`https://pokeapi.co/api/v2/pokemon?limit=${num}`);
   }
 
   /**
