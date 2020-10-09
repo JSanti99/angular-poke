@@ -1,19 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PokeapiService } from '../../services/pokeapi.service'
-
-export interface IPokemon {
-  count:    number;
-  next:     string;
-  previous: null;
-  results:  Result[];
-}
-
-export interface Result {
-  name: string;
-  url:  string;
-}
-
+import {IPokemon} from '../../model/pokemon'
 
 @Component({
   selector: 'app-layout',
@@ -21,11 +9,10 @@ export interface Result {
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  pokemons$: Observable<any>;
+  pokemons$: Observable<IPokemon>;
   pokemons;
   num: number = 1;
 
-  
   constructor
   (
     private pokeapiService: PokeapiService
