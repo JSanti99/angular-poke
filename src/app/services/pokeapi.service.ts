@@ -1,19 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpErrorResponse } from "@angular/common/http"
-import { catchError, map } from 'rxjs/operators';
-import { Observable, BehaviorSubject, throwError,of } from 'rxjs';
-
-export interface IPokemon {
-  count:    number;
-  next:     string;
-  previous: null;
-  results:  Result[];
-}
-
-export interface Result {
-  name: string;
-  url:  string;
-}
+import { Observable, throwError } from 'rxjs';
+import {IPokemon} from '../model/pokemon'
 
 @Injectable({
   providedIn: 'root'
