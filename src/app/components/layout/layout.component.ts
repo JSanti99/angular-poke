@@ -26,7 +26,10 @@ export class LayoutComponent implements OnInit {
   num: number = 1;
 
   
-  constructor(private pokeapiService: PokeapiService ) {
+  constructor
+  (
+    private pokeapiService: PokeapiService
+  ) {
     this.pokemons$ = this.pokeapiService.getPokemons(this.num);
   }
 
@@ -49,6 +52,6 @@ export class LayoutComponent implements OnInit {
       return false;
     }
     return true;
-
   }
+
 }

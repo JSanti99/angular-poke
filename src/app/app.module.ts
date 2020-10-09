@@ -10,11 +10,13 @@ import { NebularModule } from './modules/nebular/nebular.module';
 import { LayoutComponent } from './components/layout/layout.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

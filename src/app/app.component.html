@@ -1,2 +1,30 @@
-<router-outlet>
-</router-outlet>
+<nb-layout>
+    <nb-layout-header fixed>
+        <nb-icon class="header-menu-icon" icon="menu" (click)="toggle()"></nb-icon>
+        <h1>🤠</h1>
+    </nb-layout-header>
+    <nb-sidebar tag="left">
+        <nb-sidebar-header>
+            
+        </nb-sidebar-header>
+        <nb-accordion multi>
+            <nb-accordion-item>
+                <nb-accordion-item-header>
+                    Hola
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                    A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+                    Originally, nebula was a name for any diffuse astronomical object,
+                    including galaxies beyond the Milky Way.
+                </nb-accordion-item-body>
+            </nb-accordion-item>
+        </nb-accordion>
+    </nb-sidebar>
+    <nb-layout-column class="colored-column-secondary"> 
+        <router-outlet>
+        </router-outlet>
+    </nb-layout-column>
+    <nb-layout-footer>
+        <p>Made with ❤</p>
+    </nb-layout-footer>
+</nb-layout>
